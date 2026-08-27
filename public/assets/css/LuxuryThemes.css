@@ -1,0 +1,551 @@
+/* LUXURY THEME CSS */
+
+/* Root Variables */
+:root {
+    --primary-color: #d92662;
+    --secondary-color: #f7f7f7;
+
+    /* Light Mode - ألوان متناسقة وراقية */
+    --light-color: #dde7ef;
+    /* خلفية عامة ناعمة مائلة للأزرق الرمادي */
+    --hero-light-bg: #c7d2da;
+    /* بانر فاتح سماوي أغمق قليلاً لإبراز البانر بوضوح */
+
+    /* Dark Mode */
+    --dark-color: #111111;
+    --hero-dark-bg: #181818;
+
+    --text-color: #2a2a2a;
+    --muted-text: #555;
+    --section-bg: #c7d2da;
+    --section-bgg: #dde7ef;
+    --section-dark-bg: #181818;
+    --accent-color: #ffc107;
+}
+
+
+/* Reset */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--light-color);
+    color: var(--text-color);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Light Mode Hero */
+body.light-mode .hero-header {
+    background: linear-gradient(rgba(199, 210, 218, 0.7), rgba(199, 210, 218, 0.7)), url(../../img/bg-hero.jpg);
+
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+body:not(.light-mode) .hero-header {
+    background: linear-gradient(rgba(15, 23, 43, .9), rgba(15, 23, 43, .9)), url(../../img/bg-hero.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    color: #e0e0e0;
+}
+
+/* Dark Mode */
+body:not(.light-mode) {
+    background-color: var(--dark-color);
+    color: #e0e0e0;
+}
+
+body:not(.light-mode) h1,
+body:not(.light-mode) h2,
+body:not(.light-mode) h3,
+body:not(.light-mode) h4,
+body:not(.light-mode) h5,
+body:not(.light-mode) h6,
+body:not(.light-mode) p,
+body:not(.light-mode) span,
+body:not(.light-mode) small {
+    color: #eaeaea !important;
+}
+
+/* Navbar */
+.navbar {
+    position: sticky;
+    top: 0;
+    z-index: 10000;
+    background-color: var(--light-color);
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+body.dark-mode .navbar,
+body:not(.light-mode) .navbar {
+    background-color: var(--dark-color);
+}
+
+.navbar .nav-link {
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+body:not(.light-mode) .navbar .nav-link {
+    color: #ddd;
+}
+
+.navbar .nav-link.active {
+    font-weight: 600;
+    color: var(--primary-color) !important;
+}
+
+/* Hero Title */
+.hero-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: var(--primary-color);
+}
+
+/* Hero Description */
+.hero-desc {
+    font-size: 1.2rem;
+    color: var(--muted-text);
+    margin-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+body:not(.light-mode) .hero-desc {
+    color: #ccc;
+}
+
+/* Buttons */
+.btn-primary {
+    background-color: var(--primary-color);
+    border: none;
+    color: white;
+}
+
+.btn-primary:hover {
+    background-color: #c61a54;
+}
+
+.btn-secondary {
+    background-color: #6c757d;
+    color: white;
+}
+
+/* Service Items */
+.service-item {
+    background-color: var(--section-bgg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+body:not(.light-mode) .service-item {
+    background-color: var(--dark-color);
+    box-shadow: none;
+}
+
+.about-item {
+    background-color: var(--section-bg);
+    box-shadow: 0 2px 12px rgba(0, 0, 0, 0.05);
+}
+
+body:not(.light-mode) .about-item {
+    background-color: var(--section-dark-bg);
+    box-shadow: none;
+}
+
+.service-item i {
+    color: var(--primary-color);
+}
+
+/* About Section */
+.section-title {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+/* Footer */
+.footer-box {
+    background-color: #c7d2da;
+    color: #333;
+    padding: 3rem 0;
+}
+
+body:not(.light-mode) .footer-box {
+    background-color: #181818;
+    color: #ccc;
+}
+
+.footer-box a {
+    color: #bbb;
+    transition: color 0.3s;
+}
+
+.footer-box a:hover {
+    color: var(--primary-color);
+}
+
+.footer-box .footer-menu a {
+    margin: 0 10px;
+    color: #aaa;
+    font-size: 0.9rem;
+}
+
+.footer-box .footer-menu a:hover {
+    color: var(--primary-color);
+}
+
+/* Dark Background Elements */
+.bg-dark {
+    background-color: #c7d2da !important;
+}
+
+body:not(.light-mode) .bg-dark {
+    background-color: #1e1e1e !important;
+}
+
+/* Reservation Form */
+.form-control,
+.form-select {
+    background-color: #fff;
+    color: #333;
+    border: 1px solid #ccc;
+}
+
+body:not(.light-mode) .form-control,
+body:not(.light-mode) .form-select {
+    background-color: #2a2a2a;
+    color: #eee;
+    border-color: #444;
+}
+
+/* Carousel (Testimonial) */
+.testimonial-item {
+    background-color: #fdfdfd;
+    color: var(--text-color);
+}
+
+body:not(.light-mode) .testimonial-item {
+    background-color: #2a2a2a;
+    color: #eee;
+    border: 1px solid #444;
+}
+
+/* Utility */
+.rotate-img {
+    animation: imgRotate 20s linear infinite;
+    display: block;
+    max-width: 100%;
+}
+
+@keyframes imgRotate {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+/*** Youtube Video ***/
+.video {
+    position: relative;
+    height: 100%;
+    min-height: 500px;
+    background: linear-gradient(rgba(15, 23, 43, .1), rgba(15, 23, 43, .1)), url(../img/about-1.jpg);
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+.video .btn-play {
+    position: absolute;
+    z-index: 3;
+    top: 50%;
+    left: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    box-sizing: content-box;
+    display: block;
+    width: 32px;
+    height: 44px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    padding: 18px 20px 18px 28px;
+}
+
+.video .btn-play:before {
+    content: "";
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: var(--primary);
+    border-radius: 50%;
+    animation: pulse-border 1500ms ease-out infinite;
+}
+
+.video .btn-play:after {
+    content: "";
+    position: absolute;
+    z-index: 1;
+    left: 50%;
+    top: 50%;
+    transform: translateX(-50%) translateY(-50%);
+    display: block;
+    width: 100px;
+    height: 100px;
+    background: var(--primary);
+    border-radius: 50%;
+    transition: all 200ms;
+}
+
+.video .btn-play img {
+    position: relative;
+    z-index: 3;
+    max-width: 100%;
+    width: auto;
+    height: auto;
+}
+
+.video .btn-play span {
+    display: block;
+    position: relative;
+    z-index: 3;
+    width: 0;
+    height: 0;
+    border-left: 32px solid var(--dark);
+    border-top: 22px solid transparent;
+    border-bottom: 22px solid transparent;
+}
+
+@keyframes pulse-border {
+    0% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1);
+        opacity: 1;
+    }
+
+    100% {
+        transform: translateX(-50%) translateY(-50%) translateZ(0) scale(1.5);
+        opacity: 0;
+    }
+}
+
+#videoModal {
+    z-index: 99999;
+}
+
+#videoModal .modal-dialog {
+    position: relative;
+    max-width: 800px;
+    margin: 60px auto 0 auto;
+}
+
+#videoModal .modal-body {
+    position: relative;
+    padding: 0px;
+}
+
+#videoModal .close {
+    position: absolute;
+    width: 30px;
+    height: 30px;
+    right: 0px;
+    top: -30px;
+    z-index: 999;
+    font-size: 30px;
+    font-weight: normal;
+    color: #FFFFFF;
+    background: #000000;
+    opacity: 1;
+}
+
+/* === Custom Translate Switcher === */
+#custom-translate-switcher {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 9999;
+}
+
+#custom-translate-switcher button {
+    margin: 0 3px;
+    padding: 6px 10px;
+    background-color: #c7d2da;
+    border: none;
+    border-radius: 5px;
+    color: #333;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+#custom-translate-switcher button:hover {
+    background-color: #b0c4d8;
+}
+
+#theme-toggle {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 9999;
+    background-color: #f5f5f5;
+    border: none;
+    padding: 8px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+
+
+#theme-toggle:hover {
+    background-color: #e0e0e0;
+}
+
+/* إخفاء شريط Google Translate */
+
+
+/* إخفاء شريط Google Translate */
+/* إخفاء شريط الترجمة من Google بدون display:none */
+/* إخفاء الشريط بالكامل بدون display: none */
+/* إخفاء شريط Google Translate بالكامل */
+.goog-te-banner-frame.skiptranslate,
+body>.skiptranslate {
+    position: absolute !important;
+    top: -9999px !important;
+    height: 0px !important;
+    width: 0px !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+    visibility: hidden !important;
+    z-index: -999 !important;
+}
+
+/* إخفاء شعار جوجل */
+.goog-logo-link,
+.goog-te-gadget span {
+    display: none !important;
+}
+
+/* منع تحرك الصفحة */
+
+
+
+/* تنسيق الكونتينر */
+.language-switcher {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  z-index: 9999;
+}
+
+/* الزر صغير وأنيق مع سهم داخلي */
+#language-dropdown {
+  width: auto;
+  min-width: 60px;
+  height: 32px;
+  padding: 4px 24px 4px 10px;
+  border-radius: 6px;
+  border: none;
+  background-color: #cce5ff;
+  color: #003366;
+  font-size: 12px;
+  font-weight: bold;
+  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  transition: all 0.3s ease;
+  cursor: pointer;
+  appearance: none;
+
+  /* سهم صغير للأسفل */
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23003366' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  background-repeat: no-repeat;
+  background-position: right 6px center;
+  background-size: 12px;
+}
+
+/* Hover */
+#language-dropdown:hover {
+  background-color: #b3d7ff;
+}
+
+/* الوضع الداكن */
+body.dark-mode #language-dropdown {
+  background-color: #225577;
+  color: #fff;
+  background-image: url("data:image/svg+xml;utf8,<svg fill='%23ffffff' height='14' viewBox='0 0 24 24' width='14' xmlns='http://www.w3.org/2000/svg'><path d='M7 10l5 5 5-5z'/></svg>");
+  box-shadow: 0 1px 4px rgba(255,255,255,0.1);
+}
+
+
+
+.animated-glasses {
+    position: fixed;
+    top: 80px;
+    right: 30px;
+    z-index: 9998;
+    width: 70px;
+    height: 70px;
+    background-image: url('../img/glasses-light.png');
+    background-size: contain;
+    background-repeat: no-repeat;
+    animation: swing 3s infinite ease-in-out;
+    transition: filter 0.5s ease, background-image 0.5s ease;
+}
+
+/* الوضع الداكن: تغيير النظارة */
+body.dark-mode .animated-glasses,
+body:not(.light-mode) .animated-glasses {
+    background-image: url('../img/glasses-dark.png');
+    filter: brightness(1.2) contrast(1.1);
+}
+
+/* حركة النظارة (تمايل خفيف) */
+@keyframes swing {
+    0% {
+        transform: rotate(0deg);
+    }
+
+    25% {
+        transform: rotate(5deg);
+    }
+
+    50% {
+        transform: rotate(0deg);
+    }
+
+    75% {
+        transform: rotate(-5deg);
+    }
+
+    100% {
+        transform: rotate(0deg);
+    }
+}
+.notranslate {
+  translate: no;
+}
+/* اللون في الوضع الفاتح */
+/* Light Mode */
+body.light-mode .cart-icon {
+    color: #007bff; /* أزرق جميل */
+}
+
+/* Dark Mode */
+body.dark-mode .cart-icon,
+body:not(.light-mode) .cart-icon {
+    color: #ffc107; /* أصفر ذهبي */
+}
+
+/* الوضع الفاتح */
+.light-mode .item-total {
+  color: #222; /* أو أي لون غامق يتناسب مع الخلفية */
+}
+
+/* الوضع الداكن */
+.dark-mode .item-total {
+  color: #a33838; /* أبيض أو أي لون فاتح يتناسب مع الخلفية الداكنة */
+}
